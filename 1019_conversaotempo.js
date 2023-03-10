@@ -15,3 +15,4 @@ let minutos = segundos*60;
 console.log(minutos);
 
 let horas = minutos/60;
+console.log("teste")
