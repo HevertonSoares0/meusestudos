@@ -9,18 +9,28 @@ Imprima o tempo lido no arquivo de entrada (segundos), convertido para horas:min
 1h = 3600s
 */
 
-const input = require("readline-sync");
+var input = require('readline-sync')
 
 // le o valor inteiro
 let n = parseInt(input.question("Segundos "));
 
-let horas = n/3600
-let minutos = (horas%60)*60
-let segundos = minutos/60
+let horas = parseInt(n/3600) // pega os segundos e didvide por 3600s que é = a 1h
+let minutos = parseInt((n%3600)/60) // pega o resto da divisão de N por 3600 e divide por 60minutos, caso 
+let segundos = parseInt((n%3600) % 60) // resto da divisão pelo
+
+console.log(`${horas}:${minutos}:${segundos}`)
 
 
+/* Beecrowd
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-console.log(horas);
-console.log(minutos);
-console.log(segundos);
+// le o valor inteiro
+let n = parseInt(lines.shift("Segundos "));
 
+let horas = parseInt(n/3600) // pega os segundos e didvide por 3600s que é = a 1h
+let minutos = parseInt((n%3600)/60) // pega o resto da divisão de N por 3600 e divide por 60minutos, caso 
+let segundos = parseInt((n%3600) % 60) // resto da divisão pelo
+
+console.log(`${horas}:${minutos}:${segundos}`)
+*/
